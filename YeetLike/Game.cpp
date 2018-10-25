@@ -6,8 +6,12 @@ Game::Game(Window* _pWindow)
 {
 	pWindow = _pWindow;
 
+	//Add empty world for now.
+	World* voidWorld = new World(0);
+	EntityManager::getInstance().addWorld(voidWorld);
+
 	Player* pPlayer = new Player(40, 40, '@');
-	EntityManager::getInstance().registerEntity(pPlayer, true);
+	EntityManager::getInstance().registerPlayer(pPlayer);
 }
 
 Game::~Game()

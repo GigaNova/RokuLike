@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.h"
 #include "World.h"
+#include "Direction.h"
 
 class Entity
 {

@@ -80,5 +80,8 @@
     <ClInclude Include="World.h">
       <Filter>Source Files\World</Filter>
     </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Source Files\World</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

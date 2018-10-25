@@ -2,6 +2,16 @@
 
 EntityManager::EntityManager()
 {
+
+}
+
+void EntityManager::registerPlayer(Player* _pPlayer)
+{
+	if(!pPlayer)
+	{
+		pPlayer = _pPlayer;
+		registerEntity(pPlayer, true);
+	}
 }
 
 void EntityManager::registerEntity(Entity* _pEntity, bool _recieveInput)
@@ -11,6 +21,7 @@ void EntityManager::registerEntity(Entity* _pEntity, bool _recieveInput)
 	{
 		inputEntities.push_back(_pEntity);
 	}
+	_pEntity->setCurrentWorld(worldLayers.front());
 }
 
 void EntityManager::handleInput(char _input)

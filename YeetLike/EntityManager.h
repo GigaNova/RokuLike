@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include <vector>
 #include <deque>
+#include "Player.h"
 
 class EntityManager
 {
@@ -16,6 +17,7 @@ public:
 	EntityManager(EntityManager const&) = delete;
 	void operator=(EntityManager const&) = delete;
 
+	void registerPlayer(Player* _pPlayer);
 	void registerEntity(Entity* _pEntity, bool _recieveInput);
 	void handleInput(char _input);
 	void update();
@@ -23,6 +25,8 @@ public:
 
 	void addWorld(World* _pWorld);
 private:
+	Player* pPlayer;
+
 	std::vector<Entity*> entities;
 	std::vector<Entity*> inputEntities;
 
