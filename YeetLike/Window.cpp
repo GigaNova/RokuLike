@@ -1,4 +1,5 @@
 #include "Window.h"
+#include <libtcod/libtcod/console.hpp>
 
 Window::Window()
 {
@@ -21,9 +22,10 @@ void Window::clear()
 	TCODConsole::root->clear();
 }
 
-void Window::drawChar(int _x, int _y, char _char)
+void Window::drawChar(int _x, int _y, char _char, HexColor* _color)
 {
 	TCODConsole::root->putChar(_x - pCamera->getX(), _y - pCamera->getY(), _char);
+	TCODConsole::root->setCharForeground(_x - pCamera->getX(), _y - pCamera->getY(), TCODColor(_color->r, _color->g, _color->b));
 }
 
 void Window::flush()

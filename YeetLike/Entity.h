@@ -24,6 +24,7 @@ public:
 	void setCurrentWorld(World* _pWorld);
 protected:
 	World* pWorld;
+	HexColor* entityColor;
 	int x, y;
 	char icon;
 };

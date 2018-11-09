@@ -1,14 +1,17 @@
 #include "Game.h"
 #include "EntityManager.h"
 #include "Player.h"
+#include "CaveGenerator.h"
+#include <libtcod/libtcod/console_types.h>
+#include <libtcod/libtcod/console.hpp>
 
 Game::Game(Window* _pWindow)
 {
 	pWindow = _pWindow;
 
 	//Add empty world for now.
-	World* voidWorld = new World(0);
-	EntityManager::getInstance().addWorld(voidWorld);
+	CaveGenerator caveGenerator;
+	EntityManager::getInstance().addWorld(caveGenerator.generateWorld(50, 80));
 
 	Player* pPlayer = new Player(40, 40, '@');
 	EntityManager::getInstance().registerPlayer(pPlayer);

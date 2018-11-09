@@ -40,6 +40,7 @@ void EntityManager::update()
 
 void EntityManager::draw(Window* _pWindow)
 {
+	worldLayers.front()->draw(_pWindow);
 	for (auto &entity : entities) {
 		entity->draw(_pWindow);
 	}

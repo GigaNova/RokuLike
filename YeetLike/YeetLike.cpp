@@ -4,6 +4,7 @@
 #include "Camera.h"
 #include "Window.h"
 #include "Game.h"
+#include <ctime>
 
 int main()
 {
